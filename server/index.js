@@ -27,6 +27,18 @@ app.post("/api/register", async (req, res) => {
   }
 });
 
+app.post("/api/login", async (req, res) => {
+  const user = await User.findOne({
+    email: req.body.email,
+  });
+  res.json({ status: "ok" });
+  if (user) {
+    res.json({ status: "ok", user: true });
+  } else {
+    return res.json({ status: "error", user: false });
+  }
+});
+
 app.listen(8080, () => {
   console.log("Server is running on port 8080");
 });
