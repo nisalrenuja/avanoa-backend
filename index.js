@@ -13,6 +13,10 @@ mongoose.connect(
   "mongodb+srv://avanoa:c3q1ycOJynyIon8L@cluster0.nzwlw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 );
 
+app.get("/", (req, res) => {
+  res.send("<h2>Avanoa Backend API</h2>");
+});
+
 app.post("/api/register", async (req, res) => {
   console.log(req.body);
   try {
