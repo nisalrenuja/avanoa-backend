@@ -87,6 +87,7 @@ app.post("/api/quote", async (req, res) => {
   }
 });
 
+//8080 port
 app.listen(8080, () => {
   console.log("Server started on 1337");
 });
