@@ -91,7 +91,10 @@ app.post("/api/quote", async (req, res) => {
   }
 });
 
-//8080 port
-app.listen(8080, () => {
-  console.log("Server started on 1337");
+app.listen(process.env.PORT || 8080, function () {
+  console.log(
+    "Express server listening on port %d in %s mode",
+    this.address().port,
+    app.settings.env
+  );
 });
