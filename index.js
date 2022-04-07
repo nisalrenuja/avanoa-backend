@@ -8,6 +8,7 @@ const bcrypt = require("bcryptjs");
 
 app.use(cors());
 app.use(express.json());
+const port = process.env.PORT || 8080;
 
 mongoose.connect(
   "mongodb+srv://avanoa:c3q1ycOJynyIon8L@cluster0.nzwlw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
@@ -91,10 +92,6 @@ app.post("/api/quote", async (req, res) => {
   }
 });
 
-app.listen(process.env.PORT || 8080, function () {
-  console.log(
-    "Express server listening on port %d in %s mode",
-    this.address().port,
-    app.settings.env
-  );
+app.listen(port, () => {
+  console.log(`Server is running on port: ${port}`);
 });
