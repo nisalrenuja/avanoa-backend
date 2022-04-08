@@ -1,3 +1,4 @@
+const userRoutes = require("./routes/userRoutes");
 const mongoose = require("mongoose");
 const express = require("express");
 const app = express();
@@ -24,5 +25,8 @@ mongoose.connect(
 );
 
 // mw
+app.use(express.json());
+express.urlencoded({ extended: true });
 
 // routes
+app.use(userRoutes);
