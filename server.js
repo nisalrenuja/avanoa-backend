@@ -1,3 +1,4 @@
+const cookieParser = require("cookie-parser");
 const userRoutes = require("./routes/userRoutes");
 const mongoose = require("mongoose");
 const express = require("express");
@@ -27,6 +28,7 @@ mongoose.connect(
 // mw
 app.use(express.json());
 express.urlencoded({ extended: true });
+app.use(cookieParser());
 
 // routes
 app.use(userRoutes);

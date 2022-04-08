@@ -116,6 +116,24 @@ const userController = {
       res.status(500).json({ msg: err.message });
     }
   },
+  access: async (req, res) => {
+    try {
+      // rf token
+      const rf_token = req.cookies._apprftoken;
+      if (!rf_token) return res.status(400).json({ msg: "Please sign in." });
+
+      // validate
+      jwt.verify(rf_token, process.env.REFRESH_TOKEN, (err, user) => {
+        if (err) return res.status(400).json({ msg: "Please sign in again." });
+        // create access token
+        const ac_token = createToken.access({ id: user.id });
+        // access success
+        return res.status(200).json({ ac_token });
+      });
+    } catch (err) {
+      return res.status(500).json({ msg: err.message });
+    }
+  },
 };
 
 module.exports = userController;
