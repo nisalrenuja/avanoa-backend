@@ -108,7 +108,7 @@ const userController = {
       res.cookie("_apprftoken", rf_token, {
         httpOnly: true,
         path: "/api/auth/access",
-        maxAage: 24 * 60 * 60 * 1000, // 24h
+        maxAge: 24 * 60 * 60 * 1000, // 24h
       });
 
       // signing success
@@ -189,7 +189,7 @@ const userController = {
       // get info -password
       const user = await User.findById(req.user.id).select("-password");
       // return user
-      res.status(200).json({ user });
+      res.status(200).json(user);
     } catch (err) {
       res.status(500).json({ msg: err.message });
     }
