@@ -20,7 +20,8 @@ const userSchema = new Schema(
     },
     avatar: {
       type: String,
-      default: "",
+      default:
+        "https://res.cloudinary.com/avanoa/image/upload/v1649475938/avatar/default_avatar_oyb8ep.png",
     },
   },
   { timestamp: true }
