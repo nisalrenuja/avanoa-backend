@@ -151,7 +151,7 @@ const userController = {
       const ac_token = createToken.access({ id: user.id });
 
       // send email
-      const url = `http://localhost:3000/auth/reset-password/${ac_token}`;
+      const url = `${req.headers.referer}auth/reset-password/${ac_token}`;
       const name = user.name;
       sendMail.sendEmailReset(email, url, "Reset your password", name);
 
