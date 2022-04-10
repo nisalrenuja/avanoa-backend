@@ -3,6 +3,9 @@ const route = Router();
 const userController = require("../controllers/userController");
 const auth = require("../middlewares/auth");
 
+route.get("/", (req,res) =>{
+  res.json({ message: "Server up and running on port 8000" })
+});
 route.post("/api/auth/register", userController.register);
 route.post("/api/auth/activation", userController.activate);
 route.post("/api/auth/signing", userController.signing);
