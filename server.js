@@ -3,6 +3,7 @@ const userRoutes = require("./routes/userRoutes");
 const uploadRoutes = require("./routes/uploadRoutes");
 const mongoose = require("mongoose");
 const express = require("express");
+const cors = require('cors');
 const app = express();
 require("dotenv").config();
 
@@ -30,6 +31,7 @@ app.use(express.json());
 express.urlencoded({ extended: true });
 app.use(cookieParser());
 app.use("/uploads", express.static("uploads"));
+app.use(cors({ origin: true, credentials: true }));
 
 // routes
 app.use(userRoutes);
