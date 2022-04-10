@@ -45,7 +45,8 @@ const userController = {
       const activation_token = createToken.activation(newUser);
 
       // send email
-      const url = `http://localhost:3000/api/auth/activate/${activation_token}`;
+      const url = `${req.headers.referer}api/auth/activate/${activation_token}`;
+
       sendMail.sendEmailRegister(email, url, "Verify your email");
 
       // registration success
@@ -90,7 +91,6 @@ const userController = {
     try {
       // get cred
       const { email, password } = req.body;
-
       // check email
       const user = await User.findOne({ email });
       if (!user)
