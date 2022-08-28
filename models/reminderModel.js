@@ -8,17 +8,17 @@ const reminderSchema = new Schema(
       trim: true,
     },
     Description: {
-        type: String,
-        required: [true, "Please enter the Description"],     
-        trim: true,
-        unique: true, 
+      type: String,
+      required: [true, "Please enter the Description"],
+      trim: true,
+      unique: true,
     },
     Time: {
-        type: String,
-        required: [true, "Please enter your email"],
-        trim: true,
-        unique: true,
-    },    
+      type: String,
+      required: [true, "Please enter your email"],
+      trim: true,
+      unique: true,
+    },
   },
   { timestamp: true }
 );
