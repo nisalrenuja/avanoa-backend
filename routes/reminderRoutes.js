@@ -50,3 +50,32 @@ router.put("/reminder/update/:id", (req, res) => {
   );
 });
 
+router.delete("/reminder/delete/:id", (req, res) => {
+  Reminders.findByIdAndRemove(req.params.id).exec((err, deletedReminder) => {
+    if (err)
+      return res.staus(400).json({
+        message: "Delete unsuccessful",
+        err,
+      });
+
+    return res.json({
+      message: "Delete Succesfull",
+      deletedReminder,
+    });
+  });
+});
+
+router.get("/reminder/:id", (req, res) => {
+  let reminderId = req.params.id;
+
+  Reminders.findById(reminderId, (err, reminder) => {
+    if (err) {
+      return res.status(400).json({ success: false, err });
+    }
+    return res.status(200).json({
+      success: true,
+      reminder,
+    });
+  });
+});
+module.exports = router;
