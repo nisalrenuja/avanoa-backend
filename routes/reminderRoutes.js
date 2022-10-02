@@ -14,6 +14,7 @@ router.post("/reminder/save", (req, res) => {
     }
     return res.status(200).json({
       success: "Reminder saved successfully",
+      id: newReminder._id,
     });
   });
 });
