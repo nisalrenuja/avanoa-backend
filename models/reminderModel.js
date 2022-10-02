@@ -19,6 +19,16 @@ const reminderSchema = new Schema(
       trim: true,
       unique: true,
     },
+    Timestamp: {
+      type: Number,
+      required: [true, "Please enter your Timestamp"],
+      trim: true,
+      unique: true,
+      validate : {
+        validator : Number.isInteger,
+        message   : '{VALUE} is not an integer value'
+      }
+    },
   },
   { timestamp: true }
 );
