@@ -1,4 +1,4 @@
-# Avanoa Web Application - Backend
+# Avanoa Web Application - Backend App
 
 ## Contribution Guide
 
