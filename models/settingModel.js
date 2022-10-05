@@ -12,7 +12,13 @@ const audioSchema = new Schema({
     trim: true,
     unique: true,
   },
+  Delay: {
+    type: String,
+    required: [true, "Please enter the Delay"],
+    trim: true,
+  },
 });
-const Audio = model("Audio", audioSchema);
 
-module.exports = Audio;
+const Setting = model("Setting", settingSchema);
+
+module.exports = Setting;
