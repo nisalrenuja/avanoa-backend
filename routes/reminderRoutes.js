@@ -54,7 +54,7 @@ router.put("/reminder/update/:id", (req, res) => {
 router.delete("/reminder/delete/:id", (req, res) => {
   Reminders.findByIdAndRemove(req.params.id).exec((err, deletedReminder) => {
     if (err)
-      return res.staus(400).json({
+      return res.status(400).json({
         message: "Delete unsuccessful",
         err,
       });
