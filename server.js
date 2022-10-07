@@ -6,7 +6,7 @@ const app = express();
 require("dotenv").config();
 
 //Import Routes
-const reminderRoutes =require('./routes/reminderRoutes');
+const reminderRoutes = require('./routes/reminderRoutes');
 const userRoutes = require("./routes/userRoutes");
 const uploadRoutes = require("./routes/uploadRoutes");
 
