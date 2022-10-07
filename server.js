@@ -37,6 +37,6 @@ app.use("/uploads", express.static("uploads"));
 app.use(cors({ origin: true, credentials: true }));
 
 // routes
-//app.use(userRoutes);
-//app.use(uploadRoutes);
+app.use(userRoutes);
+app.use(uploadRoutes);
 app.use(reminderRoutes);
