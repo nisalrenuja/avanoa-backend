@@ -6,7 +6,7 @@ const app = express();
 require("dotenv").config();
 
 //Import Routes
-const reminderRoutes =require('./Routes/reminderRoutes');
+// const reminderRoutes =require('./Routes/reminderRoutes');
 const userRoutes = require("./routes/userRoutes");
 const uploadRoutes = require("./routes/uploadRoutes");
 
@@ -39,4 +39,4 @@ app.use(cors({ origin: true, credentials: true }));
 // routes
 app.use(userRoutes);
 app.use(uploadRoutes);
-app.use(reminderRoutes);
+// app.use(reminderRoutes);
