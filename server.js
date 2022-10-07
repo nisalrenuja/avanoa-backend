@@ -1,6 +1,4 @@
 const cookieParser = require("cookie-parser");
-const userRoutes = require("./routes/userRoutes");
-const uploadRoutes = require("./routes/uploadRoutes");
 const mongoose = require("mongoose");
 const express = require("express");
 const cors = require("cors");
