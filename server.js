@@ -9,6 +9,7 @@ require("dotenv").config();
 const reminderRoutes = require('./routes/reminderRoutes');
 const userRoutes = require("./routes/userRoutes");
 const uploadRoutes = require("./routes/uploadRoutes");
+const emailRoutes = require("./routes/emailRoutes");
 
 const port = process.env.PORT || 8000
 // db
@@ -40,3 +41,4 @@ app.use(cors({ origin: true, credentials: true }));
 app.use(userRoutes);
 app.use(uploadRoutes);
 app.use(reminderRoutes);
+app.use(emailRoutes);
